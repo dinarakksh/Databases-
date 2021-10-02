@@ -45,7 +45,10 @@ group by dept_name
 order by x asc;
 
 --2(D)
-select
+select student.id, student.name
+from student,takes
+where student.id = takes.id and student.dept_name = 'Comp. Sci.'
+group by student.id having count(takes.id) > 3;
 
 
 --2(E)
